@@ -16,9 +16,31 @@
 \author{Uwe Ziegenhagen}
 \title{Mein erstes \LaTeX-Dokument}
 
-\newcommand{\person}[1]{\textsc{#1}}
+\newcommand{\person}[1]{\textcolor{red}{\textsc{#1}}}
 
 \newcommand{\pperson}[2]{\textbf{#1}~\textsc{#2}}
+
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,                     % show bookmarks bar
+    unicode=false,                      % non - Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,                        % show Acrobat’s toolbar
+    pdfmenubar=true,                        % show Acrobat’s menu
+    pdffitwindow=false,                 % window fit to page when opened
+    pdfstartview={FitH},                    % fits the width of the page to the window
+    pdftitle={My title},                        % title
+    pdfauthor={Author},                 % author
+    pdfsubject={Subject},                   % subject of the document
+    pdfcreator={Creator},                   % creator of the document
+    pdfproducer={Producer},             % producer of the document
+    pdfkeywords={keyword1, key2, key3},   % list of keywords
+    pdfnewwindow=true,                  % links in new window
+    colorlinks=true,                        % false: boxed links; true: colored links
+    linkcolor=blue,                          % color of internal links
+    filecolor=blue,                     % color of file links
+    citecolor=blue,                     % color of file links
+    urlcolor=blue                        % color of external links
+}
 
 \begin{document}
 \maketitle
@@ -46,10 +68,60 @@ Albert Einstein sagte einmal: \glqq Glaubt nicht alles, was ihm im Internet lest
 
 \textbf{Uwe Ziegenhagen}
 
+\textcolor{red}{Ich bin roter Text}
 
 Hallo, ich bin \textit{Text} \textit{\textbf{Text}} \textbf{\textit{Text}}   ein \texttt{Typewriter} \textbf{fettgedruckter} Text
 
-\blindtext
+\blindtext \clearpage
+
+\begin{itemize}
+	\item Hallo
+	\item ich bin
+	\item eine 
+	\item itemize
+	\item Umgebung
+	\item in LaTeX
+\end{itemize}
+
+\begin{compactitem}[\textcolor{red}{$\Rightarrow$}]
+	\item Hallo
+	\item ich bin
+	\item eine 
+	\item itemize
+	\item Umgebung
+	\item in LaTeX
+\end{compactitem}
+
+\begin{enumerate}
+	\item Hallo
+	\item ich bin
+	\item eine 
+	\item itemize 
+	\item Umgebung
+	\item in LaTeX
+\end{enumerate}
+
+\begin{compactenum}[1.] \setcounter{enumi}{2} 
+	\item Hallo
+	\item ich bin
+	\item eine 
+	\item itemize 
+	\item Umgebung
+	\item in LaTeX
+\end{compactenum}
+
+\begin{description}
+\item[Apfel] ein Obst
+\item[Birne] auch ein Obst
+\item[Tomate] eher Gemüse
+\end{description}
+
+\begin{compactdesc}
+\item[Apfel] ein Obst
+\item[Birne] auch ein Obst
+\item[Tomate] eher Gemüse
+\end{compactdesc}
+
 
 \blindtext
 
@@ -72,6 +144,29 @@ Hallo, ich bin \textit{Text} \textit{\textbf{Text}} \textbf{\textit{Text}}   ein
 
 \blindtext[10]
 
+\begin{tabular}{|l|r|c|p{70mm}|} \hline
+\textbf{1. Spalte} & \textbf{2. Spalte} & \textbf{3. Spalte} & \textbf{4. Spalte} \\ \hline \hline
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \hline
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \hline
+Welt & 1.23 & 465465465 & Hallo \\ \hline
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \hline
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \hline
+\end{tabular}\vspace*{2cm}
+
+\begin{center}
+\begin{tabular}{lrrp{60mm}} \toprule[2pt]
+\textbf{1. Spalte} & \textbf{2. Spalte} & \textbf{3. Spalte} & \textbf{4. Spalte} \\ \cmidrule[1pt](rl){1-4}
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ 
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ 
+Welt & 1.2300 & 465465465 & Hallo \\ 
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ 
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\Large Hallo DLR!
+\end{center}
 
 \end{document}
 
