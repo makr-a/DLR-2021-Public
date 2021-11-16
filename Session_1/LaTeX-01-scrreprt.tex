@@ -1,4 +1,4 @@
-\documentclass[12pt,ngerman,parskip=half]{scrreprt}
+\documentclass[12pt,ngerman,parskip=half]{scrreprt} % draft für keine Bilder
 \usepackage{blindtext}
 
 \usepackage[T1]{fontenc}
@@ -9,6 +9,7 @@
 \usepackage{listings}
 \usepackage{csquotes}
 \usepackage{lmodern}
+\usepackage{here}
 
 \usepackage{babel}
 \usepackage{microtype}
@@ -47,6 +48,10 @@
 
 \tableofcontents
 
+\listoffigures
+
+\listoftables
+
 \chapter{Themenüberblick}
 
 \section{Einführung}
@@ -63,6 +68,7 @@ Albert Einstein sagte einmal: \enquote{Glaubt nicht alles, \enquote{Glaubt nicht
 
 Albert Einstein sagte einmal: \glqq Glaubt nicht alles, was ihm im Internet lest!\grqq
 
+Siehe Abbildung \ref{fig:katze}  auf Seite \pageref{fig:katze}
 
 \textmd{Uwe Ziegenhagen}
 
@@ -137,7 +143,7 @@ Hallo, ich bin \textit{Text} \textit{\textbf{Text}} \textbf{\textit{Text}}   ein
 
 \section{Hauptteil}\label{sec:hauptteil}
 
-\blindtext[100]
+\blindtext[1]
 
 
 \section{Schlussworte}
@@ -167,6 +173,81 @@ Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \bottomrule
 \begin{center}
 \Large Hallo DLR!
 \end{center}
+
+\chapter{Bilder}
+
+\includegraphics[width=5cm]{Katze2.jpg}
+
+\includegraphics[width=\textwidth]{Katze2.jpg}
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{Katze2.jpg}
+\end{center}
+
+\includegraphics[height=\textheight,width=\textwidth]{Katze2.jpg}
+
+ABC\hspace{10mm}DEF
+
+ABC\hspace{1cm}DEF
+
+ABC\hspace{10pt}DEF
+
+ABC\hspace{10pc}DEF
+
+ABC\hspace{10ex}DEF
+
+ABC\hspace{10em}DEF
+
+
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./Bilder/Katze/Katze2.jpg}
+\end{center}
+
+\chapter{Gleitobjekte}
+
+\blindtext
+
+\blindtext
+
+% t = top, Anfang der Seite
+% b = bottom, Ende der Seite
+% h = here, da, wo das Bild eingefügt wurde
+% ! = Sei entspannt, LaTeX, wo Du das Bild hinpackst
+% H => über \usepackage{here} strenger als das kleine h
+
+\begin{figure}[h] % tbhH!
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./Bilder/Katze/Katze2.jpg}
+\caption{Unsere Miezekatze}\label{fig:katze}
+\end{center}
+\end{figure}
+
+Siehe Abbildung \ref{fig:katze}  auf Seite \pageref{fig:katze}
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\begin{table}
+\begin{center}
+\caption{Meine schöne Tabelle}\label{tab:nice}
+\begin{tabular}{lrrp{60mm}} \toprule[2pt]
+\textbf{1. Spalte} & \textbf{2. Spalte} & \textbf{3. Spalte} & \textbf{4. Spalte} \\ \cmidrule[1pt](rl){1-4}
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ 
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ 
+Welt & 1.2300 & 465465465 & Hallo \\ 
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ 
+Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\blindtext
+
+\blindtext
 
 \end{document}
 
