@@ -7,6 +7,7 @@
 \usepackage{booktabs}
 \usepackage{paralist}
 \usepackage{listings}
+\usepackage{csquotes}
 \usepackage{lmodern}
 
 \usepackage{babel}
@@ -16,6 +17,8 @@
 \title{Mein erstes \LaTeX-Dokument}
 
 \newcommand{\person}[1]{\textsc{#1}}
+
+\newcommand{\pperson}[2]{\textbf{#1}~\textsc{#2}}
 
 \begin{document}
 \maketitle
@@ -28,7 +31,21 @@
 \subsection{Literaturüberblick}
 \subsubsection{Literatur vor 1900}
 
-Hallo, ich {\tiny bin} ein {\Huge großer} Text. \person{Albert Einstein}
+Hallo, ich {\tiny bin} ein {\Huge großer} Text. \person{Albert Einstein} \pperson{Albert}{Einstein} 
+
+Siehe dazu auch Abschnitt \ref{sec:hauptteil} auf Seite \pageref{sec:hauptteil}.
+
+\person{Albert Einstein}\footnote{Bekannter Physiker}\marginpar{Albert Einstein war ein bekannter Physiker, der sich mit der Relativitätstheorie beschäftigte.}
+
+Albert Einstein sagte einmal: \enquote{Glaubt nicht alles, \enquote{Glaubt nicht alles, was ihm im Internet lest!} was ihm im Internet lest!}
+
+Albert Einstein sagte einmal: \glqq Glaubt nicht alles, was ihm im Internet lest!\grqq
+
+
+\textmd{Uwe Ziegenhagen}
+
+\textbf{Uwe Ziegenhagen}
+
 
 Hallo, ich bin \textit{Text} \textit{\textbf{Text}} \textbf{\textit{Text}}   ein \texttt{Typewriter} \textbf{fettgedruckter} Text
 
@@ -46,7 +63,7 @@ Hallo, ich bin \textit{Text} \textit{\textbf{Text}} \textbf{\textit{Text}}   ein
 
 \blindtext
 
-\section{Hauptteil}
+\section{Hauptteil}\label{sec:hauptteil}
 
 \blindtext[100]
 
