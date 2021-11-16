@@ -1,12 +1,21 @@
 \documentclass[12pt,ngerman,parskip=half]{scrreprt}
 \usepackage{blindtext}
 
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{paralist}
+\usepackage{listings}
+\usepackage{lmodern}
+
 \usepackage{babel}
 \usepackage{microtype}
 
 \author{Uwe Ziegenhagen}
 \title{Mein erstes \LaTeX-Dokument}
 
+\newcommand{\person}[1]{\textsc{#1}}
 
 \begin{document}
 \maketitle
@@ -18,6 +27,10 @@
 \section{Einführung}
 \subsection{Literaturüberblick}
 \subsubsection{Literatur vor 1900}
+
+Hallo, ich {\tiny bin} ein {\Huge großer} Text. \person{Albert Einstein}
+
+Hallo, ich bin \textit{Text} \textit{\textbf{Text}} \textbf{\textit{Text}}   ein \texttt{Typewriter} \textbf{fettgedruckter} Text
 
 \blindtext
 
