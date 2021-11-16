@@ -10,6 +10,11 @@
 \usepackage{csquotes}
 \usepackage{lmodern}
 \usepackage{here}
+\usepackage{amsmath}
+
+\makeatletter
+\newcommand*{\avg}{\mathop{\operator@font avg}}
+\makeatother
 
 \usepackage{babel}
 \usepackage{microtype}
@@ -69,6 +74,8 @@ Albert Einstein sagte einmal: \enquote{Glaubt nicht alles, \enquote{Glaubt nicht
 Albert Einstein sagte einmal: \glqq Glaubt nicht alles, was ihm im Internet lest!\grqq
 
 Siehe Abbildung \ref{fig:katze}  auf Seite \pageref{fig:katze}
+
+Siehe Abbildung \ref{fig:katze2}  auf Seite \pageref{fig:katze2}
 
 \textmd{Uwe Ziegenhagen}
 
@@ -248,6 +255,50 @@ Hallo Welt & 1.2345 & 123 & Hallo, ich bin ein kleiner Text. \\ \bottomrule
 \blindtext
 
 \blindtext
+
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{./Bilder/Katze/Katze2.jpg}
+\captionof{figure}{Unsere Miezekatze}\label{fig:katze2}
+\end{center}
+
+
+\chapter{Mathematik}
+
+Ich bin eine Formel $a^2+b^2=c^2$ im laufenden Text in TeX-Notation.
+
+$$a^2+b^2=c^2$$
+
+Ich bin eine Formel \(a^2+b^2=c^2\) im laufenden Text in LaTeX-Notation.
+
+\[a^2+b^2=c^2\]
+
+\begin{equation}
+- \frac{p}{2} \pm \sqrt{ \left(\frac{p}{2}\right)^2 - q }
+\end{equation}
+
+\begin{equation}
+c_{a_b}^{2^2} \cdot \cdots \dots \ldots \int_{i=0}^{\infty} \not= \sum_{x}^{y}
+\end{equation}
+
+
+\begin{equation}
+\overbrace{a^2 + b^2}^{\text{Hallo Welt}}_{456} =\underbrace{c^2 + d^2}_{\mbox{Hallo Welt}}
+\end{equation}
+
+\begin{equation}
+sin \not= \sin \cos \tan \cosh \avg
+\end{equation}
+
+Siehe Formel \ref{eq:test}
+
+\begin{eqnarray}
+y  &=& d \\
+  &=& d + e\\\label{eq:test}
+  &=& d + \cos x \\
+\end{eqnarray}
+
+
 
 \end{document}
 
