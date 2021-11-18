@@ -1,4 +1,4 @@
-:*:fuh#::Fernuniversität Hagen
+:*:dlr#::Deutsches Zentrum für Luft- und Raumfahrt
 
 
 :*:ch#::\chapter{{}{}}{LEFT}
