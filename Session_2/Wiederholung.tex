@@ -5,6 +5,7 @@
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{siunitx}
 \usepackage{esvect} % \vv{} Befehl
 
 \author{Uwe Ziegenhagen}
@@ -128,6 +129,7 @@ A & B & C \\
 
 \[ ABC \not= \overline{ABC}  \Omega \]
 
+\section*{Hallo, nicht im Inhaltsverzeichnis}
 
 Abstände im Mathematiksatz
 
@@ -141,6 +143,47 @@ Abstände im Mathematiksatz
 \[ a b c \rightarrow a\quad b\quad c \]
 
 \[ a b c \rightarrow a\qquad b\qquad c \]
+
+
+%AMS Math
+
+\begin{align} 
+a &= x \cdot y
+\end{align}
+
+\begin{align*} 
+a &= x \cdot y
+\end{align*}
+
+\begin{alignat}{3} 
+a     &=   &&= ccc \\
+aaa &= bbb      &&= c
+\end{alignat}
+
+\chapter{Einheitensatz mit siunitx}
+
+1m
+
+% \usepackage{siunitx}
+
+\num{3,1415927} oder \num{3234534253253.54353}
+
+\si{m}  \si{m \per \second^2} \si{m/\second^2}  $1m^2$
+
+\SI{299000}{\kilo\meter\per\second}
+
+\SIrange{10}{20}{\kilo\meter\per\second}
+
+\ang{180}
+
+\vspace*{2cm}
+\begin{tabular}{rS}
+a & 123.456 \\
+a & 123.456789 \\
+a & 12354654.4 \\
+a & 123.456e10 \\
+a & 123.456 \\
+\end{tabular}
 
 
 
