@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 \usepackage{xcolor}
+\usepackage{paralist}
  
 % sinnloser Text 
 \usepackage{blindtext}
@@ -56,30 +57,39 @@
  
 \section{Zweiter Abschnitt}
  
-\blindtext[5]
+\blindtext[1]
  
-\begin{figure}%
+\begin{figure}[h]%
 \rule{\columnwidth}{5cm}
 \caption{Hallo Welt!}%
 \label{fig:test2}%
 \end{figure}
  
-\blindtext[4]
+\blindtext[1]
  
-\begin{itemize}
+\begin{figure}%
+\rule{\columnwidth}{5cm}
+\caption{Hallo Welt!}%
+\label{fig:hier}%
+\end{figure}
+ 
+\begin{compactitem}
 	\item Ohne Paket: Siehe Abbildung \ref{fig:test1} auf Seite \pageref{fig:test1}
 	\item Varioref: Siehe Abbildung \vref{fig:test1}
 	\item Varioref: Siehe die Abbildung \vpageref{fig:test1}
 	\item Ohne Paket: Siehe Abbildung \ref{fig:test2} auf Seite \pageref{fig:test2} 
-	\item Varioref: Siehe Abbildung \vpageref{fig:test2}
+	\item Varioref: Siehe die Abbildung \vpageref{fig:test2}
 	\item Varioref: Siehe Abbildung \vref{fig:test2}
 	\item Varioref: Siehe Abbildungen \vrefrange{fig:test1}{fig:test2}
 	\item Varioref: Siehe die Abbildungen \vpagerefrange{fig:test1}{fig:test2}
 	\item Prettyref: \prettyref{fig:test1}
 	\item Prettyref: \prettyref{sec:erst}
+	\item Varioref: \vref{sec:erst}
 	\item Varioref: Siehe Abbildung \vref{fig:test3}
 	\item Varioref: Siehe Abbildung \vref{fig:test4}
-\end{itemize}
+\end{compactitem}
+
+
  
 \clearpage 
  
