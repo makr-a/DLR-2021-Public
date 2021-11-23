@@ -1,14 +1,40 @@
 %!TEX TS-program = Arara
-% arara: pdflatex
+% arara: pdflatex: { draft : yes }
 % arara: biber
+% arara: makeindex
 % arara: pdflatex
-\documentclass[ngerman, 12pt,oneside,parskip=half,liststotoc,bibtotoc]{scrbook}
+\documentclass[ngerman, 11pt,parskip=half,liststotoc,BCOR=9mm, bibtotoc,oneside,DIV=9]{scrbook} %
+
+%\usepackage[grid, gridunit=mm, texcoord, gridcolor=blue, subgridcolor=gray!50]{eso-pic}
+
+\usepackage{index}
+\makeindex
 
 \author{Uwe Ziegenhagen}
 \title{Meine Dissertation CO\textsubscript{2} CO2}
 \date{Köln, den \today}
 
-\input{preambel}
+\usepackage[headsepline=0.5pt,footsepline=0.5pt]{scrlayer-scrpage}
+\KOMAoptions{headwidth=1.1\textwidth,footwidth=1.1\textwidth}
+
+\pagestyle{scrheadings}
+\clearscrheadings 
+
+\clearscrheadings 
+\ohead[]{\headmark}
+\ofoot{\pagemark}
+\ihead{}
+\ifoot{}
+\chead{}
+\cfoot[\pagemark]{}
+
+
+\input{preambel} 
+
+\makeatletter
+%https://tex.stackexchange.com/questions/239490/how-can-i-print-a-length-in-centimeters
+\def\convertto#1#2{\strip@pt\dimexpr #2*65536/\number\dimexpr 1#1}
+\makeatother
 
 \begin{document}
 \maketitle
@@ -22,7 +48,17 @@
 
 \mainmatter
 
+\index{Physiker!Einstein} \index{Physiker!Meitner}
+
+\chapter{Test}
+
+Textbreite \convertto{cm}{\the\textwidth} cm, Texthöhe \convertto{cm}{\the\textheight} cm
+
+
+
 \include{kapitel_01}
+
+\includegraphics[width=\textwidth]{Bilder/Katze2}
 
 \include{kapitel_02}
 
@@ -31,6 +67,8 @@
 
 \backmatter
 \chapter{Anhang}
+
+\printindex
 
 % böse
 %\nocite{*}
