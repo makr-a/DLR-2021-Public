@@ -7,15 +7,16 @@
  
 % sinnloser Text 
 \usepackage{blindtext}
- \usepackage{varioref}
+\usepackage{varioref}
 \usepackage{prettyref}
+
  
 % for prettyref
 \newrefformat{eq}{\textup{(\ref{#1})}}
 \newrefformat{cha}{Kapitel \ref{#1}}
 \newrefformat{sec}{Abschnitt \ref{#1}}
 \newrefformat{tab}{Tabelle \ref{#1} auf Seite \pageref{#1}}
-\newrefformat{fig}{Abbildung \ref{#1} auf Seite \pageref{#1}}
+\newrefformat{fig}{Abbildung \ref{#1} auf der tollen Seite \pageref{#1}}
  
 \usepackage{showlabels}
 
@@ -40,9 +41,10 @@
     citecolor=blue,                     % color of file links
     urlcolor=blue                        % color of external links
 }
- 
+\usepackage{cleveref}
+
 \begin{document}
- 
+ \label{aaa}
 \section{Erster Abschnitt}\label{sec:erst}
  
 \blindtext[3]
@@ -75,12 +77,15 @@
  
 \begin{compactitem}
 	\item Ohne Paket: Siehe Abbildung \ref{fig:test1} auf Seite \pageref{fig:test1}
+	\item Cleverref: Siehe \cref{fig:test1}
+	\item Cleverref: \namecref{fig:test1}
+	\item Cleverref: \cpageref{fig:test1}
 	\item Varioref: Siehe Abbildung \vref{fig:test1}
 	\item Varioref: Siehe die Abbildung \vpageref{fig:test1}
 	\item Ohne Paket: Siehe Abbildung \ref{fig:test2} auf Seite \pageref{fig:test2} 
 	\item Varioref: Siehe die Abbildung \vpageref{fig:test2}
 	\item Varioref: Siehe Abbildung \vref{fig:test2}
-	\item Varioref: Siehe Abbildungen \vrefrange{fig:test1}{fig:test2}
+	\item Varioref: Siehe Abbildungen \vrefrange{fig:test1}{fig:test4}
 	\item Varioref: Siehe die Abbildungen \vpagerefrange{fig:test1}{fig:test2}
 	\item Prettyref: \prettyref{fig:test1}
 	\item Prettyref: \prettyref{sec:erst}

@@ -3,10 +3,13 @@
 % arara: biber
 % arara: makeindex
 % arara: pdflatex
-\documentclass[ngerman, 11pt,parskip=half,liststotoc,BCOR=9mm, bibtotoc,oneside,DIV=9]{scrbook} %
+\documentclass[ngerman,11pt,parskip=half,liststotoc,bibtotoc,oneside]{scrbook} %
+
+\usepackage[top=5mm,left=5mm,bottom=5mm,right=5mm]{geometry}
 
 %\usepackage[grid, gridunit=mm, texcoord, gridcolor=blue, subgridcolor=gray!50]{eso-pic}
 
+\usepackage{booktabs}
 \usepackage{index}
 \makeindex
 
@@ -45,6 +48,15 @@
 \listoffigures
 
 \listoftables
+
+\clearpage
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\chapter*{Abkürzungsverzeichnis}
+
+\begin{tabular}{lp{0.75\textwidth}} \toprule
+Kürzel & Erläuterung \\ \midrule
+$\pi$ & Kreiszahl \\ \bottomrule
+\end{tabular}
 
 \mainmatter
 
