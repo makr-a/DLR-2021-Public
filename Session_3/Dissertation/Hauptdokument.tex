@@ -1,20 +1,14 @@
+%!TEX TS-program = Arara
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
 \documentclass[ngerman, 12pt,oneside,parskip=half,liststotoc,bibtotoc]{scrbook}
 
-\usepackage{booktabs}
-\usepackage{babel}
-\usepackage{graphicx}
-\usepackage{csquotes}
-\usepackage{paralist}
-\usepackage{xcolor}
-\usepackage{blindtext}
-
-% Schmutzige Hacks
-%\setlength{\parindent}{0pt}
-%\setlength{\parskip}{6pt}
-
 \author{Uwe Ziegenhagen}
-\title{Meine Dissertation}
+\title{Meine Dissertation CO\textsubscript{2} CO2}
 \date{Köln, den \today}
+
+\input{preambel}
 
 \begin{document}
 \maketitle
@@ -27,25 +21,19 @@
 \listoftables
 
 \mainmatter
-\chapter{Einführung}\label{cha:einführung}
-\section{Literatur}
 
-\blindtext[1]
+\include{kapitel_01}
 
-\blindtext[1]
+\include{kapitel_02}
 
-\blindtext[1]
+\include{kapitel_03}
 
-\blindtext[1]
-
-\blindtext[2]
-
-
-\section{Historischer Abriss}
-
-\blindtext[5]
 
 \backmatter
 \chapter{Anhang}
+
+% böse
+%\nocite{*}
+\printbibliography
 
 \end{document}
