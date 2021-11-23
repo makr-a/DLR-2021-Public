@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\begin{document}
+
+\begin{equation}
+d = e
+\end{equation}
+
+\begin{align*}
+a &=b  \numberthis \label{eqn} \\
+  &=c \\
+\end{align*}
+
+Equation \eqref{eqn} shows that $a=c$.
+
+\begin{equation}
+d = e
+\end{equation}
+\end{document}
