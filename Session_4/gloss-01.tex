@@ -1,0 +1,51 @@
+%!TEX TS-program = Arara
+% arara: pdflatex: {shell: yes}
+% arara: makeglossaries
+% arara: pdflatex: {shell: yes}
+
+\documentclass[12pt,ngerman]{scrartcl}
+\usepackage{babel}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\newglossaryentry{latex}
+{
+        name=latex,
+        description={eine Markup-Sprache für wissenschaftliche Text}
+}
+\newacronym{kgv}{KGV}{Kleines Gemeinsames Vielfaches}
+
+\newacronym{ggt}{GGT}{Größter Gemeinsamer Teiler}
+
+\begin{document}
+
+Die \Gls{latex} Markup-Sprache ist nützlich in den Wissenschaften, aber nicht nur dort.
+
+\textbf{acr-Befehle}
+
+\acrlong{kgv}
+
+\acrshort{kgv}
+
+\acrfull{kgv}
+
+\textbf{gls-Befehle}
+
+
+\gls{kgv}
+
+\gls{ggt}
+
+\clearpage
+
+\gls{kgv}
+
+\gls{ggt}
+
+
+
+\printglossary[type=\acronymtype]
+
+\printglossary
+
+\end{document}
