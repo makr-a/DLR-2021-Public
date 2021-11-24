@@ -1,0 +1,43 @@
+\documentclass[ngerman,12pt]{scrlttr2}
+\usepackage{babel}
+
+\setkomavar{fromname}{Donald Duck}
+\setkomavar{fromaddress}{Arme-Leute-Weg 1, 12346 Entenhausen}
+\setkomavar{subject}{Rücknahme der Kündigung}
+\setkomavar{yourmail}{22.11.2021}
+\setkomavar{myref}[Mieternummer]{12456878}
+\setkomavar{yourref}{2021-06-10-Kü-DD}
+\usepackage{bookman}
+
+\usepackage{blindtext,ragged2e}
+
+\setkomavar{firsthead}{
+\textsf{Dr. Uwe Ziegenhagen \hfill www.uweziegenhagen.de}
+}
+
+\setkomavar{nexthead}{
+a
+}
+
+\setkomavar{firstfoot}{
+Mobil: 0123-456\,789\,8648
+}
+
+\begin{document}
+
+\begin{letter}{Dagobert Duck \\ Geldspeicher 1 \\ 12345 Entenhausen}
+\opening{Lieber Onkel Dagobert,}
+
+\begin{RaggedRight}
+vielen Dank für Deinen Brief vom \usekomavar{yourmail}. Du alter Geizknochen wirst doch wohl nicht deine Neffen auf die Straße setzen. Schäm dich! 
+
+\blindtext[4]
+\end{RaggedRight}
+
+\closing{Mit freundlichen Grüßen,}
+
+\encl{vollgeweintes Taschentuch \\ Strick}
+\end{letter}
+
+
+\end{document}
